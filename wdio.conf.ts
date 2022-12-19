@@ -1,5 +1,6 @@
 import type { Options } from '@wdio/types'
 
+
 export const config: Options.Testrunner = {
     //
     // ====================
@@ -145,8 +146,9 @@ export const config: Options.Testrunner = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
-
+    reporters: [['allure', {
+        outputDir: 'allure-results',
+    }]],
 
     
     //
@@ -296,6 +298,7 @@ export const config: Options.Testrunner = {
      */
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
+    
     /**
     * Gets executed when a refresh happens.
     * @param {String} oldSessionId session ID of the old session
