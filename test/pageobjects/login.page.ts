@@ -6,7 +6,6 @@ class LoginPage {
     public emailTxtbox: string = "~input-email";
     public passwordTxtbox: string = "~input-password";
     public loginBtn: string = '//android.view.ViewGroup[@content-desc="button-LOGIN"]/android.view.ViewGroup/android.widget.TextView';
-    // public alertTitle: string = "~Success";
     public alertTitle: string = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView";
     public async open() {
         await browser.pause(1000);
