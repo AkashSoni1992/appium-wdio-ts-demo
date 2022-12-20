@@ -1,49 +1,45 @@
-import { ChainablePromiseElement } from 'webdriverio';
 
-
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class LoginPage {
-    /**
-     * define selectors using getter methods
-     */
-    // public get inputUsername () {
-    //     return $('#username');
-    // }
 
-    // public get inputPassword () {
-    //     return $('#password');
-    // }
-
-    // public get btnSubmit () {
-    //     return $('button[type="submit"]');
-    // }
-
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
-    //  public async login (username: string, password: string) {
-    //     await this.inputUsername.setValue(username);
-    //     await this.inputPassword.setValue(password);
-    //     await this.btnSubmit.click();
-    // }
-
-    /**
-     * overwrite specific options to adapt it to page object
-     */
     public loginIcon: string = "~Login";
-    //public loginIcon: string = '//android.widget.Button[@content-desc="Login"]/android.widget.TextView[2]';
-    public async open () {
-        //const LOGIN_ICON = '~Login';
+    public loginPageTitle: string = '//android.widget.ScrollView[@content-desc="Login-screen"]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView';
+    public emailTxtbox: string = "~input-email";
+    public passwordTxtbox: string = "~input-password";
+    public loginBtn: string = '//android.view.ViewGroup[@content-desc="button-LOGIN"]/android.view.ViewGroup/android.widget.TextView';
+    public alertTitle: string = "~Success";
+    
+    public async open() {
         await browser.pause(1000);
         $(this.loginIcon).click();
-        await browser.pause(5000);
         console.log("Inside application login page");
     }
 
-    public 
+    public async getLoginPageTitle() {
+        // await browser.pause(5000);
+        (await $(this.loginPageTitle)).waitForDisplayed({ timeout: 5000 });
+        return (await $(this.loginPageTitle)).getText();
+    }
+
+    public async setEmail(email: string) {
+        console.log("Email: ", email);
+        (await $(this.emailTxtbox)).setValue(email);
+    }
+
+    public async setPassword(password: string) {
+        console.log("Password: ", password);
+        (await $(this.passwordTxtbox)).setValue(password);
+    }
+
+    public async clickLoginBtn(){
+        await browser.pause(2000);
+        (await $(this.loginBtn)).click();
+        await browser.pause(2000);
+    }
+
+    public async getAlertTitle(){
+        (await $(this.alertTitle)).waitForDisplayed({timeout: 5000});
+        return (await $(this.alertTitle)).getText();
+    }
 }
 
 export default new LoginPage();
