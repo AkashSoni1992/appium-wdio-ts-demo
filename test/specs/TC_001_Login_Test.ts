@@ -1,12 +1,11 @@
 import LandingPage from '../pageobjects/landingPage'
-import LoginPage from '../pageobjects/loginPage'
 import LoginFlow from '../testflows/loginFlow'
+import {VALID_CREDS} from '../testdata/TC_001_Login_Test_Data'
 
 
 describe('Login scenario test', () => {
     it('should login with valid credentials', async () => {
-        var email = "akash.soni@accesshq.com";
-        var password = "1234567789";
+        const {email, password} = VALID_CREDS;
         await LandingPage.openLoginpage();
         await LoginFlow.loginWithCredentials(email, password);
         await LoginFlow.verifyLoginSuccessMessage();
