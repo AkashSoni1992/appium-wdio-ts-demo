@@ -1,4 +1,3 @@
-
 class LoginPage {
 
     public loginPageTitle: string = '//android.widget.ScrollView[@content-desc="Login-screen"]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView';
@@ -15,11 +14,12 @@ class LoginPage {
     }
 
     public async setEmail(email: string) {
-        (await $(this.emailTxtbox)).setValue(email);
+        await $(this.emailTxtbox).waitForDisplayed();
+        await $(this.emailTxtbox).setValue(email);
     }
 
     public async setPassword(password: string) {
-        (await $(this.passwordTxtbox)).setValue(password);
+        await $(this.passwordTxtbox).setValue(password);
     }
 
     public async clickLoginBtn() {
