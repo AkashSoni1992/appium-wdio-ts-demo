@@ -33,8 +33,8 @@ class LoginPage {
     /**
      * overwrite specific options to adapt it to page object
      */
-    // public loginIcon: string = "~Login";
-    public loginIcon: string = '//android.widget.Button[@content-desc="Login"]/android.widget.TextView[2]';
+    public loginIcon: string = "~Login";
+    //public loginIcon: string = '//android.widget.Button[@content-desc="Login"]/android.widget.TextView[2]';
     public async open () {
         //const LOGIN_ICON = '~Login';
         await browser.pause(1000);
@@ -42,6 +42,8 @@ class LoginPage {
         await browser.pause(5000);
         console.log("Inside application login page");
     }
+
+    public 
 }
 
 export default new LoginPage();

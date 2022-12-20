@@ -1,0 +1,3 @@
+steps:
+  - command: "npm run wdio-ci"
+    artifact_paths: "allure-report/*"
