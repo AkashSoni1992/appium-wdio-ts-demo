@@ -1,6 +1,6 @@
-import LandingPage from '../pageobjects/landingPage'
-import LoginFlow from '../testflows/loginFlow'
-import {VALID_CREDS} from '../testdata/TC_001_Login_Test_Data'
+import LandingPage from '../pageObjects/landingPage'
+import LoginFlow from '../testFlows/login_flow'
+import {VALID_CREDS} from '../testData/TC_001_Login_Test_Data'
 
 
 describe('Login scenario test', () => {
@@ -11,6 +11,3 @@ describe('Login scenario test', () => {
         await LoginFlow.verifyLoginSuccessMessage();
     })
 })
-
-
-

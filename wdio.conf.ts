@@ -34,6 +34,9 @@ export const config: Options.Testrunner = {
     specs: [
         './test/specs/**/*.ts'
     ],
+    // specs: [
+    //     './test/features/login.feature'
+    // ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -133,6 +136,7 @@ export const config: Options.Testrunner = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
+    // framework: 'cucumber',
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -158,6 +162,49 @@ export const config: Options.Testrunner = {
         ui: 'bdd',
         timeout: 60000
     },
+
+    // cucumberOpts: {
+    //     // <boolean> show full backtrace for errors
+    //     backtrace: false,
+    //     // <string[]> module used for processing required features
+    //     requireModule: [],
+    //     // <boolean< Treat ambiguous definitions as errors
+    //     failAmbiguousDefinitions: true,
+    //     // <boolean> invoke formatters without executing steps
+    //     // dryRun: false,
+    //     // <boolean> abort the run on first failure
+    //     failFast: false,
+    //     // <boolean> Enable this config to treat undefined definitions as
+    //     // warnings
+    //     ignoreUndefinedDefinitions: false,
+    //     // <string[]> ("extension:module") require files with the given
+    //     // EXTENSION after requiring MODULE (repeatable)
+    //     names: [],
+    //     // <boolean> hide step definition snippets for pending steps
+    //     snippets: true,
+    //     // <boolean> hide source uris
+    //     source: true,
+    //     // <string[]> (name) specify the profile to use
+    //     profile: [],
+    //     // <string[]> (file/dir) require files before executing features
+    //     require: [
+    //         './test/stepDefinitions/*.ts'
+    //     ],
+    //     scenarioLevelReporter: false,
+    //     order: 'defined',
+    //     // <string> specify a custom snippet syntax
+    //     snippetSyntax: undefined,
+    //     // <boolean> fail if there are any undefined or pending steps
+    //     strict: true,
+    //     // <string> (expression) only execute the features or scenarios with
+    //     // tags matching the expression, see
+    //     // https://docs.cucumber.io/tag-expressions/
+    //     tagExpression: 'not @Pending',
+    //     // <boolean> add cucumber tags to feature or scenario name
+    //     tagsInTitle: false,
+    //     // <number> timeout for step definitions
+    //     timeout: 20000,
+    // } as WebdriverIO.CucumberOpts,
     //
     // =====
     // Hooks

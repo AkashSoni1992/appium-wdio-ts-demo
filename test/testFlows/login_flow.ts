@@ -1,5 +1,5 @@
-import LandingPage from '../pageobjects/landingPage'
-import LoginPage from '../pageobjects/loginPage'
+import LandingPage from '../pageObjects/landingPage'
+import LoginPage from '../pageObjects/loginPage'
 
 class LoginFlow{
     public async loginWithCredentials(email, password){
