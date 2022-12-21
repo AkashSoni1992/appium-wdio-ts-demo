@@ -57,6 +57,7 @@ export const config: Options.Testrunner = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
+    // maxInstances: 2,
     maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
@@ -78,6 +79,25 @@ export const config: Options.Testrunner = {
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
     }],
+    // capabilities: [{
+    //     "platformName": "Android",
+    //     "automationName": "UIAutomator2",
+    //     "udid": "emulator-5554",
+    //     "appPackage": "com.wdiodemoapp",
+    //     "appActivity": ".MainActivity",
+    //     "port": 6000,
+    //     "systemPort": 6001
+    // },
+    // {
+    //     "platformName": "Android",
+    //     "automationName": "UIAutomator2",
+    //     "udid": "emulator-5556",
+    //     "appPackage": "com.wdiodemoapp",
+    //     "appActivity": ".MainActivity",
+    //     "port": 7000,
+    //     "systemPort": 7001
+    // }
+    // ],
     //
     // ===================
     // Test Configurations
